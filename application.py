@@ -22,7 +22,8 @@ def clear_data():  # To clear the data from the copy of constants.py
     for player in players_copy:
         if player.get('experience') == 'NO':
             player['experience'] = False
-        player['experience'] = True
+        else:
+            player['experience'] = True
         player['height'] = int(player['height'][:2])
         player['guardians'] = player['guardians'].split(' and ')
 
@@ -31,7 +32,8 @@ def experience_splitter():  # To split the experience, so that it can be used la
     for player in players_copy:
         if player.get('experience') == True:
             experience.append(player)
-        no_experience.append(player)
+        else:
+            no_experience.append(player)
 
 
 def balance_teams():  # To balance the teams with equal number of players
@@ -72,6 +74,7 @@ def team_menu():  # To display the team names and further selection of team
     print('\t> Panthers')
     print('\t> Bandits')
     print('\t> Warriors\n')
+    print('')
     choice = input(
         '\tEnter your choice [panthers/bandits/warriors]:  ').lower()
     while True:
