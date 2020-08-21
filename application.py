@@ -90,7 +90,7 @@ def team_menu():  # To display the team names and further selection of team
                 input('\tEnter your choice [panthers/bandits/warriors]:  ')).lower()
 
 
-def stats(choice):  # To option-menu the selected team stats
+def stats(choice):  # To display the option-menu the selected team stats
     if choice == 'panthers'.lower():
         stats_info('Panthers')
     elif choice == 'bandits'.lower():
