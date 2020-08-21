@@ -90,7 +90,7 @@ def team_menu():  # To display the team names and further selection of team
                 input('\tEnter your choice [panthers/bandits/warriors]:  ')).lower()
 
 
-def stats(choice):  # To display the selected team stats
+def stats(choice):  # To option-menu the selected team stats
     if choice == 'panthers'.lower():
         stats_info('Panthers')
     elif choice == 'bandits'.lower():
@@ -99,7 +99,7 @@ def stats(choice):  # To display the selected team stats
         stats_info('Warriors')
 
 
-def stats_info(team):
+def stats_info(team):  # To show the team stats, such as number of player, their names, etc
     print(f'\n\tTeam {team} stats:')
     print('\t----------------------------------\n')
     print(f'\tTotal Players on the team:  {str(PLAYER_PER_TEAM)}')
@@ -116,6 +116,7 @@ def stats_info(team):
     stats_again()
 
 
+# To show the total number of experienced players
 def total_experienced_player(team):
     experienced_player = 0
     not_experienced_player = 0
@@ -127,6 +128,7 @@ def total_experienced_player(team):
         f'\n\tTotal number of experienced players are {experienced_player} and not experienced player are {not_experienced_player} on the team')
 
 
+# To show the average height of the players in the selected team
 def average_height_players(team):
     avg_total_height = 0
     for player in balance_team.get(team):
@@ -135,7 +137,7 @@ def average_height_players(team):
     print(f'\tAverage height of players on this team is {avg_height} inch\n')
 
 
-def guardians_player(team):
+def guardians_player(team):  # To show the gurdians of the selected team
     guardians = []
     for player in balance_team.get(team):
         guardians += player.get('guardians')
@@ -144,7 +146,7 @@ def guardians_player(team):
         f'\tThe guradians on this on this team are:\n\t{total_num_guardians}')
 
 
-def stats_again():
+def stats_again():  # To give an option of going again from the menu
     print('\t----------------------------------')
     choice = input('\n\tWould you like to go again? [y/n]:  ').lower()
     while True:
