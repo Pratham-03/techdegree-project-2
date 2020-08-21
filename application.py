@@ -126,7 +126,8 @@ def total_experienced_player(team):
     for player in balance_team.get(team):
         if player.get('experience') == True:
             experienced_player += 1
-        not_experienced_player += 1
+        else:
+            not_experienced_player += 1
     print(
         f'\n\tTotal number of experienced players are {experienced_player} and not experienced player are {not_experienced_player} on the team')
 
